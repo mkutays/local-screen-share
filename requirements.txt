@@ -1,0 +1,5 @@
+pylint==2.7.4
+autopep8==1.5.6
+Flask-Bootstrap==3.3.7.1
+pyscreenshot==2.3
+Pillow==8.2.0

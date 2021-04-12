@@ -1,3 +1,5 @@
+import socket from './socket-io.js';
+
 var frameinterval = 1;     // 200 milliseconds means 5 frames per second
 var frameerrcount = 0;
 var screenfeedtimeout = null;

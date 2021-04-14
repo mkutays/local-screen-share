@@ -1,30 +1,40 @@
-import threading
-from io import BytesIO
 import time
 import base64
+import threading
+
+from io import BytesIO
 import pyscreenshot as ImageGrab
 
 
-class Screen():
+class Screen:
+    '''[summary]
+    '''
+
     def __init__(self):
-        self.FPS = 1
+        '''[summary]
+        '''
+        self.fps = 1
         self.screenbuf = ""
         self.screenfile = BytesIO()
-        threading.Thread(target=self.getframes).start()
+        threading.Thread(target=self.get_frames).start()
 
-    def __del__(self):
-        self.screenfile.close()
-
-    def getframes(self):
+    def get_frames(self):
+        '''[summary]
+        '''
         while True:
-            im = ImageGrab.grab(childprocess=False)
+            img = ImageGrab.grab(childprocess=False)
             self.screenfile = BytesIO()
-            im.save(self.screenfile, quality=1, format="jpeg")
-            im.close()
+            img.save(self.screenfile, quality=1, format="jpeg")
+            img.close()
             self.screenbuf = base64.b64encode(self.screenfile.getvalue())
-            time.sleep(1.0/self.FPS)
+            time.sleep(1.0/self.fps)
 
     def gen(self):
+        '''[summary]
+
+        :return: [description]
+        :rtype: [type]
+        '''
         return self.screenbuf
 
 

@@ -4,7 +4,7 @@
     "editor.rulers": [
         120
     ],
-    "python.pythonPath": "${workspaceFolder}/lss-venv/Scripts/python",
+    "python.pythonPath": "lss-venv\\Scripts\\python.exe",
     "python.linting.pycodestyleEnabled": false,
     "python.linting.pylintEnabled": true,
     "python.linting.enabled": true,

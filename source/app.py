@@ -3,7 +3,7 @@ from flask.templating import render_template
 from flask import Flask
 from flask_bootstrap import Bootstrap
 
-from .screen import screenlive
+from screen import screenlive
 
 
 app = Flask(__name__)

@@ -1,8 +1,8 @@
 import time
 import base64
 import threading
-
 from io import BytesIO
+
 import pyscreenshot as ImageGrab
 
 
@@ -16,7 +16,7 @@ class Screen:
         self.fps = 1
         self.screenbuf = ""
         self.screenfile = BytesIO()
-        # threading.Thread(target=self.get_frames).start()
+        threading.Thread(target=self.get_frames).start()
 
     def get_frames(self):
         '''[summary]
